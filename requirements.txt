@@ -1,0 +1,13 @@
+torch>=2.1.2
+torchvision>=0.16.2
+accelerate>=0.27.0
+timm>=0.9.12
+sentencepiece>=0.1.99
+einops>=0.7.0
+pandas>=2.1.0
+pyarrow>=14.0.0
+numpy<2.0.0
+pillow>=10.2.0
+tqdm>=4.66.0
+modelscope>=1.11.0
+decord
