@@ -1,0 +1,60 @@
+model:
+  path: /root/autodl-tmp/models/InternVL2-8B # 或 InternVL3-14B
+  name: InternVL2-8B
+  trust_remote_code: True 
+  is_evaluate: True 
+  # attn_implementation: eager
+  
+data:
+  name: VSI_Bench
+  question_type: object_abs_distance
+  path: /root/autodl-tmp/data/VSI_Bench/
+  file_name: eval_vsibench.json
+  output_path: /root/verl_evaluate/outputs/
+  prompt_key: prompt
+  batch_size: 1 
+  n_samples: 1
+
+trainer:
+  nnodes: 1
+  n_gpus_per_node: 1 
+  device: cuda
+  strategy: none
+  use_fsdp: false
+  patch_model: false
+  fsdp: false
+  zero3: false
+  use_gpu: true
+
+rollout:
+  temperature: 1.0
+  top_k: -1
+  top_p: 1
+  prompt_length: 2048
+  response_length: 512
+  do_sample: true
+  n: 1
+  validate: false
+  val_kwargs:
+    top_k: -1
+    top_p: 1.0
+    temperature: 0
+    n: 1
+    do_sample: false
+
+ray_kwargs:
+  ray_init:
+    local_mode: false
+    runtime_env:
+      env_vars:
+        TOKENIZERS_PARALLELISM: "true"
+
+actor:
+  strategy: fsdp
+  fsdp_config:
+    fsdp_size: -1
+    fsdp_transformer_layer_cls_to_wrap:
+      - LlamaDecoderLayer
+      - InternLM2DecoderLayer
+    min_num_params: 0
+    forward_prefetch: False

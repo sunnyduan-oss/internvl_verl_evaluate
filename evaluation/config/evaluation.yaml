@@ -1,0 +1,16 @@
+data:
+  path: /root/verl_evaluate/outputs/SAT/
+  prompt_key: prompt
+  response_key: cleaned_model_output
+  ground_truth_key: cleaned_gt_answer
+  metric_key: metric
+  question_type: question_type
+
+custom_reward_function:
+  path: /root/verl_evaluate/my_tools/reward_function.py
+  name: sat_compute_score
+
+ray_kwargs:
+  ray_init:
+    num_cpus: 8 # `None` means using all CPUs, which might cause hang if limited in systems like SLURM. Please set to a number allowed then.
+  timeline_json_file: null
