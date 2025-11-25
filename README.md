@@ -44,23 +44,18 @@ It includes unified prompt templates, dataset handling, model interfaces, and di
 
 ```mermaid
 flowchart LR
-    A[Dataset] --> B[Preprocessing]
-    B --> C[Model Loading]
-    C --> D[Distributed Evaluation]
-    D --> E[Metric Computation]
+    A[Dataset Loading & Preprocessing] -->
+    B[Model Loading & Answer Generation] --> C[Evaluate predictions & Metric Computation]
 ```
 
 **Workflow Explanation:**
 
-1. Dataset: Load VSI-Bench videos or SAT images.
+1. **Dataset Loading and Preprocessing:** Load VSI-Bench videos or SAT images; Resize, normalize, and tile images or frames; Construct input prompts for the model.
 
-2. Preprocessing: Resize, normalize, and tile images or frames; extract patches.
+2. **Model Loading and Answer Generation:** Load InternVL2 or InternVL3 model; Perform forward passes to generate predictions (answers) for images or video frames; Post-process the generated answers and store them in Parquet format.
 
-3. Model Loading: Load InternVL2/InternVL3 with Hugging Face transformers or FSDP for distributed inference.
 
-4. Distributed Evaluation: Run batched forward passes and handle multi-frame or multi-image inputs.
-
-5. Metric Computation: Compute Accuracy (acc) or Mean Relative Accuracy (MRA) depending on the task.
+3. **Evaluation and Metric Computation:** Evaluate predictions on the dataset; Compute task-specific metrics such as Accuracy (acc) or Mean Relative Accuracy (MRA).
 
 ---
 
