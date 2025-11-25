@@ -81,7 +81,9 @@ Higher values indicate better performance.
 
 #### 📊 Evaluation Results on VSI-Bench 
 
-| Task                          | InternVL2-8B     |
+![VSI-Bench Results](assets/vsi_results.png)
+
+<!-- | Task                          | InternVL2-8B     |
 |------------------------------|--------|
 | **object_rel_direction_easy**      | 50.23 |
 | **object_rel_direction_medium**    | 29.63 |
@@ -90,10 +92,10 @@ Higher values indicate better performance.
 | **route_planning**                 | 31.44 |
 | **obj_appearance_order**           | 33.01 |
 | **object_abs_distance**            | 24.44 |
-| **object_counting**                | 50.23 |
+| **object_counting**                | 28.16 |
 | **object_size_estimation**         | 42.93 |
 | **room_size_estimation**           | 32.05 |
-| **average**           | 32.85 |
+| **average**           | 32.85 | -->
 
 ### InternVL3 on SAT
 
@@ -110,14 +112,16 @@ Higher is better.
 
 #### 📊 Evaluation Results on VSI-Bench
 
-| Task               | InternVL3-2B | InternVL3-8B |
+![SAT Results](assets/sat_results.png)
+
+<!-- | Task               | InternVL3-2B | InternVL3-8B |
 |--------------------|--------|-------|
 | **ego_movement**   | 53.85 | 44.44 |
 | **obj_movement**   | 27.27 | 44.12 |
 | **action_conseq**  | 75.00 | 65.85 |
 | **perspective**    | 33.33 | 52.08 |
 | **goal_aim**       | 28.57 | 48.78 |
-| **average**        | 43.60 | 51.06 |
+| **average**        | 43.60 | 51.06 | -->
 
 ---
 
