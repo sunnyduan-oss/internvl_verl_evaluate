@@ -44,8 +44,8 @@ It includes unified prompt templates, dataset handling, model interfaces, and di
 
 ```mermaid
 flowchart LR
-    A[Dataset Loading & Preprocessing] -->
-    B[Model Loading & Answer Generation] --> C[Evaluate predictions & Metric Computation]
+    A[Dataset Loading and Preprocessing] -->
+    B[Model Loading and Answer Generation] --> C[Evaluate predictions and Metric Computation]
 ```
 
 **Workflow Explanation:**
